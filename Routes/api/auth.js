@@ -31,6 +31,7 @@ router.post('/signin',async(req,res)=>{
             return
         }
         const confirmPassword=bcrypt.compareSync(body.password,data.password)
+        console.log(confirmPassword,body.password,data.password)
         if(!confirmPassword){
             res.status(402).json({message:'incorrect password'})
             return
